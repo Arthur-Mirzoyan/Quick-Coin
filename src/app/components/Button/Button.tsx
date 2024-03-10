@@ -12,22 +12,18 @@ interface ButtonProps {
   textStyle?: StyleProp<TextStyle>;
 
   iconVisible?: boolean;
-  iconPosition?: ButtonIconPositionEnum;
+  iconPosition?: 'top' | 'right' | 'bottom' | 'left';
 }
 
 export function Button(props: PropsWithChildren<ButtonProps>) {
   return (
     <Pressable onPress={props.onPress} style={[styles.button, props.buttonStyle]}>
-      {props.iconVisible && props.iconPosition === ButtonIconPositionEnum.Top && props.children}
+      {props.iconVisible && props.iconPosition === 'top' && props.children}
       <Text style={[styles.text, props.textStyle]}>{props.title}</Text>
-      {props.iconVisible && props.iconPosition === ButtonIconPositionEnum.Bottom && props.children}
+      {props.iconVisible && props.iconPosition === 'bottom' && props.children}
 
-      {props.iconVisible && props.iconPosition === ButtonIconPositionEnum.Right && (
-        <View style={props.iconPosition === ButtonIconPositionEnum.Right ? styles.icon_right : null}>{props.children}</View>
-      )}
-      {props.iconVisible && props.iconPosition === ButtonIconPositionEnum.Left && (
-        <View style={props.iconPosition === ButtonIconPositionEnum.Left ? styles.icon_left : null}>{props.children}</View>
-      )}
+      {props.iconVisible && props.iconPosition === 'right' && <View style={styles.icon_right}>{props.children}</View>}
+      {props.iconVisible && props.iconPosition === 'left' && <View style={styles.icon_left}>{props.children}</View>}
     </Pressable>
   );
 }

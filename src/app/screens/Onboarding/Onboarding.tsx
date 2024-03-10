@@ -8,7 +8,7 @@ import { items } from './items';
 import { Paginator } from '@components/Paginator/Paginator';
 import { Button } from '@components/Button/Button';
 
-function OnboardingScreen() {
+function OnboardingScreen({ navigation }: any) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const flatListRef = useRef<FlatList>(null);
@@ -18,7 +18,7 @@ function OnboardingScreen() {
     if (nextIndex < items.length) {
       setCurrentIndex(nextIndex);
       flatListRef.current?.scrollToIndex({ animated: true, index: nextIndex });
-    }
+    } else navigation.navigate('signin');
   };
 
   const handleScrollEnd = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
