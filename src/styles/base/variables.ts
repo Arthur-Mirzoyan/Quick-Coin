@@ -1,0 +1,45 @@
+export const variables = {
+  colors: {
+    primary: '#0c322a',
+    secondary: '#094235',
+    tertiary: '',
+    bg: '#f4f4f4',
+    textLight: '#ffffff',
+    textDark: '#094235',
+    textGray: '#7e848d',
+  },
+  borderRadius: {
+    xs: 5,
+    s: 7,
+    m: 10,
+    l: 16,
+    xl: 20,
+  },
+  fontSizes: {
+    s: 14,
+    m: 16,
+    l: 20,
+    xl: 24,
+    xxl: 28,
+  },
+  paddings: {
+    s: 5,
+    m: 10,
+    l: 16,
+    xl: 20,
+    xxl: 32,
+  },
+  margins: {
+    s: 5,
+    m: 10,
+    l: 20,
+    xl: 40,
+  },
+  spacings: {
+    xs: 5,
+    s: 10,
+    m: 15,
+    l: 20,
+    xl: 30,
+  },
+};
