@@ -16,6 +16,7 @@ function SignInScreen({ navigation }: any) {
     email: '',
     password: '',
   });
+  const [passwordVisible, setPasswordVisible] = useState<boolean>(false);
 
   const goBack = (): void => {
     navigation.goBack();
@@ -24,6 +25,8 @@ function SignInScreen({ navigation }: any) {
   const signin = (): void => {
     console.log(userInfo);
   };
+
+  const handleShowVisibility = (): void => setPasswordVisible((prev) => !prev);
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -51,11 +54,11 @@ function SignInScreen({ navigation }: any) {
             titleStyle={styles.input_title}
             inputBoxStyle={styles.input_box_box}
             inputStyle={styles.input}
-            isPassword={true}
+            isPassword={!passwordVisible}
             getInputValue={(val) => setUserInfo({ ...userInfo, password: val })}
           >
             <Ionicons name="lock-closed-outline" size={24} color="#A2A2A7" />
-            <AntDesign name="eyeo" size={24} color="#A2A2A7" />
+            <AntDesign name="eyeo" size={24} color="#A2A2A7" onPress={handleShowVisibility} />
           </InputBox>
         </View>
         <View style={styles.footer}>
