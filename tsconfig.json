@@ -4,7 +4,6 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@*": ["./*"],
       "@components/*": ["src/app/components/*"],
       "@constants/*": ["src/app/constants/*"],
       "@screens/*": ["src/app/screens/*"],
@@ -14,7 +13,8 @@
       "@models/*": ["src/app/models/*"],
       "@enums/*": ["src/app/enums/*"],
       "@styles/*": ["src/styles/*"],
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["assets/*"],
+      "@*": ["./*"]
     }
   }
 }
