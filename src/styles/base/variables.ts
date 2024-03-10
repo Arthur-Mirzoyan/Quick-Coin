@@ -7,6 +7,7 @@ export const variables = {
     textLight: '#ffffff',
     textDark: '#094235',
     textGray: '#7e848d',
+    border: '#232533',
   },
   borderRadius: {
     xs: 5,
@@ -21,6 +22,7 @@ export const variables = {
     l: 20,
     xl: 24,
     xxl: 28,
+    xxxl: 32,
   },
   paddings: {
     s: 5,
@@ -34,6 +36,7 @@ export const variables = {
     m: 10,
     l: 20,
     xl: 40,
+    xxl: 50,
   },
   spacings: {
     xs: 5,
@@ -41,5 +44,6 @@ export const variables = {
     m: 15,
     l: 20,
     xl: 30,
+    xxl: 40,
   },
 };
