@@ -27,6 +27,7 @@ function SignInScreen({ navigation }: any) {
   };
 
   const signin = (): void => {
+    navigation.navigate('main');
     console.log(userInfo);
   };
 

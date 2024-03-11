@@ -30,6 +30,7 @@ export function InputBox(props: PropsWithChildren<InputBoxProps>) {
           keyboardType={props.keyboard}
           onChangeText={(text) => props.getInputValue?.(text)}
           secureTextEntry={props.isPassword}
+          placeholder={props.placeholder}
         />
         {props.iconPosition === 'right' && props.children}
         {props.iconPosition === 'inline' && childrenArray[1]}
