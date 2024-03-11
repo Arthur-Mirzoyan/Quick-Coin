@@ -7,6 +7,7 @@ import { variables } from '@styles/base/variables';
 import OnboardingScreen from '@src/app/screens/Onboarding/Onboarding';
 import SignInScreen from '@screens/SignIn/SignIn';
 import SignUpScreen from '@screens/SignUp/SignUp';
+import MainScreen from '@screens/MainScreen/MainScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ export default function App() {
           <Stack.Screen name="onboarding" component={OnboardingScreen} />
           <Stack.Screen name="signin" component={SignInScreen} />
           <Stack.Screen name="signup" component={SignUpScreen} />
+          <Stack.Screen name="main" component={MainScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </KeyboardAvoidingView>

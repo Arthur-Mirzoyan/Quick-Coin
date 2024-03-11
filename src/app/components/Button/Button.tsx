@@ -2,8 +2,6 @@ import React, { PropsWithChildren } from 'react';
 import { Pressable, Text, GestureResponderEvent, StyleProp, ViewStyle, TextStyle, View } from 'react-native';
 import { styles } from './Button.style';
 
-import { ButtonIconPositionEnum } from '@src/app/enums/ButtonIconPosition.enum';
-
 interface ButtonProps {
   title: string;
   onPress: (event: GestureResponderEvent) => void;

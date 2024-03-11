@@ -2,12 +2,14 @@ export const variables = {
   colors: {
     primary: '#0c322a',
     secondary: '#094235',
-    tertiary: '',
+    tertiary: '#da8611',
     bg: '#f4f4f4',
     textLight: '#ffffff',
     textDark: '#094235',
     textGray: '#7e848d',
     border: '#232533',
+    tabIconColor: '#8B8B94',
+    tabIconActiveColor: '',
   },
   borderRadius: {
     xs: 5,
@@ -15,6 +17,7 @@ export const variables = {
     m: 10,
     l: 16,
     xl: 20,
+    xxl: 30,
   },
   fontSizes: {
     s: 14,
