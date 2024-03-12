@@ -1,16 +1,17 @@
 import { UserInfoModel } from '@models/UserInfo.model';
 import React from 'react';
-import { View, Text, Image, Pressable, GestureResponderEvent } from 'react-native';
+import { View, Text, Image, Pressable, GestureResponderEvent, StyleProp, ViewStyle } from 'react-native';
 import { styles } from './UserCard.style';
 
 type UserCardProps = {
   user: UserInfoModel;
-  onPress: (event: GestureResponderEvent) => void;
+  style?: StyleProp<ViewStyle>;
+  onPress?: (event: GestureResponderEvent) => void;
 };
 
-export function UserCard({ user, onPress }: UserCardProps) {
+export function UserCard({ user, style, onPress }: UserCardProps) {
   return (
-    <Pressable style={styles.container} onPress={onPress}>
+    <Pressable style={[styles.container, style]} onPress={onPress}>
       <Image
         style={styles.photo}
         source={{ uri: user.photoUrl }}

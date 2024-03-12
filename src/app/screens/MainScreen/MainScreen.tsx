@@ -4,8 +4,11 @@ import { variables } from '@styles/base/variables';
 // Icons
 import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 // Screens
 import MyBalanceScreen from '@screens/MyBalance/MyBalance';
+// Stacks
+import ProfileStack from '@stacks/Profile.stack';
 
 const Tab = createBottomTabNavigator();
 
@@ -47,12 +50,12 @@ function MainScreen() {
         }}
       />
       <Tab.Screen
-        name="settings"
-        component={MyBalanceScreen}
+        name="profile"
+        component={ProfileStack}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Feather
-              name="settings"
+            <MaterialCommunityIcons
+              name="account-outline"
               size={30}
               color={focused ? variables.colors.tertiary : variables.colors.tabIconColor}
             />
