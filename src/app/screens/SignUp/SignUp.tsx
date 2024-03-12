@@ -5,9 +5,7 @@ import { styles } from './SignUp.styles';
 import { Button } from '@components/Button/Button';
 import { InputBox } from '@components/InputBox/InputBox';
 // Icons
-import { Ionicons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons, AntDesign, Entypo } from '@expo/vector-icons';
 // Models
 import { UserInfoModel } from '@models/UserInfo.model';
 import { KeyboardEnum } from '@enums/Keyboard.enum';
@@ -45,7 +43,7 @@ function SignUpScreen({ navigation }: any) {
             iconPosition="left"
             getInputValue={(val) => setUserInfo({ ...userInfo, fullName: val })}
           >
-            <Ionicons name="mail-outline" size={24} color="#A2A2A7" />
+            <MaterialCommunityIcons name="account-outline" size={24} color="#A2A2A7" />
           </InputBox>
           <InputBox
             title="Phone Number"

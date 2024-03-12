@@ -1,0 +1,7 @@
+{
+  "name": "quick-coin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}
