@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { ScrollView, View, Pressable } from 'react-native';
 import { styles } from './Profile.style';
 // Icons
-import { MaterialIcons } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
+import { MaterialIcons, Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 // Providers
 import { useUser } from '@providers/user.provider';
 // Models
@@ -41,7 +39,7 @@ function ProfileScreen({ navigation }: any) {
         <BalanceCard {...sampleCard} />
         <View style={styles.info_view}>
           <InputBox title="Full Name" iconPosition="left" value={userInfo.fullName} readonly={true}>
-            <Ionicons name="mail-outline" size={24} color="#A2A2A7" />
+            <MaterialCommunityIcons name="account-outline" size={24} color="#A2A2A7" />
           </InputBox>
           <InputBox title="Phone Number" iconPosition="left" value={userInfo.phone} readonly={true}>
             <Feather name="phone" size={24} color="#A2A2A7" />
