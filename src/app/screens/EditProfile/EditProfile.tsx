@@ -5,6 +5,8 @@ import { styles } from './EditProfile.style';
 import { useUser } from '@providers/user.provider';
 // Models
 import { UserInfoModel } from '@models/UserInfo.model';
+// Enums
+import { KeyboardEnum } from '@enums/Keyboard.enum';
 // Icons
 import { Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 // Custom
@@ -41,6 +43,7 @@ function EditProfileScreen({ navigation }: any) {
         <InputBox
           title="Phone Number"
           iconPosition="left"
+          keyboard={KeyboardEnum.Phone}
           defaultValue={userInfo.phone}
           getInputValue={(val) => setUserData({ ...userData, phone: val })}
         >
@@ -49,6 +52,7 @@ function EditProfileScreen({ navigation }: any) {
         <InputBox
           title="Email Address"
           iconPosition="left"
+          keyboard={KeyboardEnum.Email}
           defaultValue={userInfo.email}
           getInputValue={(val) => setUserData({ ...userData, email: val })}
         >
