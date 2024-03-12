@@ -6,9 +6,9 @@ import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 // Screens
-import MyBalanceScreen from '@screens/MyBalance/MyBalance';
 // Stacks
 import ProfileStack from '@stacks/Profile.stack';
+import ProgressScreen from '@screens/Progress/Progress';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,12 +24,12 @@ function MainScreen() {
       }}
     >
       <Tab.Screen
-        name="myBalance"
-        component={MyBalanceScreen}
+        name="progress"
+        component={ProgressScreen}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Feather
-              name="pie-chart"
+            <MaterialCommunityIcons
+              name="progress-star"
               size={30}
               color={focused ? variables.colors.tertiary : variables.colors.tabIconColor}
             />
@@ -38,7 +38,7 @@ function MainScreen() {
       />
       <Tab.Screen
         name="home"
-        component={MyBalanceScreen}
+        component={ProgressScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <Ionicons

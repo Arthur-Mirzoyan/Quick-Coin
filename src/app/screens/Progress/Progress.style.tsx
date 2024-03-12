@@ -5,6 +5,6 @@ export const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     padding: variables.paddings.xl,
-    gap: 20
+    gap: 40
   },
 });
