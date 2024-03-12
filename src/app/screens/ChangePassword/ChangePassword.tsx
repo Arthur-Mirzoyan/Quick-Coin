@@ -1,12 +1,83 @@
-import React from 'react';
-import { ScrollView, View, Text, Image } from 'react-native';
+import React, { useState } from 'react';
+import { ScrollView, View } from 'react-native';
 import { styles } from './ChangePassword.style';
-import { useUser } from '@providers/user.provider';
+// Providers
+// Models
+// Icons
+import { Ionicons, AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
+// Custom
+import { InputBox } from '@components/InputBox/InputBox';
+import { Button } from '@components/Button/Button';
 
-function ChangePasswordScreen() {
-  const { userInfo } = useUser();
+function ChangePasswordScreen({ navigation }: any) {
+  const [userData, setUserData] = useState({
+    current: '',
+    new: '',
+    confirm: '',
+  });
 
-  return <ScrollView style={styles.container}></ScrollView>;
+  const [currentPasswordVisibility, setCurrentPasswordVisibility] = useState<boolean>(true);
+  const [newPasswordVisibility, setNewPasswordVisibility] = useState<boolean>(true);
+  const [confirmPasswordVisibility, setConfirmPasswordVisibility] = useState<boolean>(true);
+
+  const updatePassword = async (): Promise<void> => {
+    // Check also the current password
+    if (userData.new === userData.confirm) {
+      // await updateUser(userData);
+
+      navigation.goBack();
+    }
+  };
+
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.info_view}>
+        <InputBox
+          title="Current Password"
+          iconPosition="inline"
+          isPassword={currentPasswordVisibility}
+          getInputValue={(val) => setUserData({ ...userData, current: val })}
+        >
+          <Ionicons name="lock-closed-outline" size={24} color="#A2A2A7" />
+          <AntDesign
+            name="eyeo"
+            size={24}
+            color="#A2A2A7"
+            onPress={() => setCurrentPasswordVisibility((prev) => !prev)}
+          />
+        </InputBox>
+        <InputBox
+          title="New Password"
+          iconPosition="inline"
+          isPassword={newPasswordVisibility}
+          getInputValue={(val) => setUserData({ ...userData, new: val })}
+        >
+          <Ionicons name="lock-closed-outline" size={24} color="#A2A2A7" />
+          <AntDesign name="eyeo" size={24} color="#A2A2A7" onPress={() => setNewPasswordVisibility((prev) => !prev)} />
+        </InputBox>
+        <InputBox
+          title="Confirm New Password"
+          iconPosition="inline"
+          isPassword={confirmPasswordVisibility}
+          getInputValue={(val) => setUserData({ ...userData, confirm: val })}
+        >
+          <Ionicons name="lock-closed-outline" size={24} color="#A2A2A7" />
+          <AntDesign
+            name="eyeo"
+            size={24}
+            color="#A2A2A7"
+            onPress={() => setConfirmPasswordVisibility((prev) => !prev)}
+          />
+        </InputBox>
+      </View>
+      <Button
+        title="Change"
+        onPress={updatePassword}
+        buttonStyle={styles.save_button}
+        textStyle={styles.save_button_text}
+      />
+    </ScrollView>
+  );
 }
 
 export default ChangePasswordScreen;
