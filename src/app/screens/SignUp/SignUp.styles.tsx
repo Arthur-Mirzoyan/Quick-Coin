@@ -25,26 +25,7 @@ export const styles = StyleSheet.create({
     fontWeight: '500',
   },
   inputs_view: {
-    gap: variables.spacings.l,
-  },
-  input_box: {
-    gap: variables.spacings.m,
-    borderBottomWidth: 2,
-    borderBottomColor: variables.colors.border,
-  },
-  input_title: {
-    color: variables.colors.textGray,
-    fontSize: variables.fontSizes.m,
-    fontWeight: '400',
-  },
-  input_box_box: {
-    gap: variables.spacings.m,
-    paddingVertical: variables.paddings.s,
-  },
-  input: {
-    color: variables.colors.secondary,
-    fontWeight: '400',
-    fontSize: variables.fontSizes.l,
+    gap: variables.spacings.xl,
   },
   footer: {
     gap: variables.spacings.l,

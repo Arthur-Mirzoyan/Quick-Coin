@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
     gap: variables.spacings.m,
   },
   photo: {
-    width: 75,
-    height: 75,
+    width: 70,
+    height: 70,
     resizeMode: 'contain',
     borderRadius: 40,
     overflow: 'hidden',

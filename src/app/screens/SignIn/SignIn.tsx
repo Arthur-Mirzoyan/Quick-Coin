@@ -10,9 +10,11 @@ import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 // Models
 import { UserInfoModel } from '@models/UserInfo.model';
+import { useUser } from '@providers/user.provider';
 
 function SignInScreen({ navigation }: any) {
-  const [userInfo, setUserInfo] = useState<UserInfoModel>({
+  const { setUserInfo } = useUser();
+  const [user, setUser] = useState<UserInfoModel>({
     email: '',
     password: '',
   });
@@ -28,7 +30,17 @@ function SignInScreen({ navigation }: any) {
 
   const signin = (): void => {
     navigation.navigate('main');
-    console.log(userInfo);
+    console.log(user);
+
+    // Remove
+    setUserInfo({
+      fullName: 'Bob Bobikyan',
+      email: 'bob.bobikyan@gmail.com',
+      password: 'pa$$word',
+      phone: '+123456789',
+      photoUrl: 'https://shorturl.at/hnIQZ',
+    });
+    //
   };
 
   const handleShowVisibility = (): void => setPasswordVisible((prev) => !prev);
@@ -41,26 +53,14 @@ function SignInScreen({ navigation }: any) {
       <View style={styles.main}>
         <Text style={styles.main_title}>Sign In</Text>
         <View style={styles.inputs_view}>
-          <InputBox
-            title="Email Address"
-            iconPosition="left"
-            boxStyle={styles.input_box}
-            titleStyle={styles.input_title}
-            inputBoxStyle={styles.input_box_box}
-            inputStyle={styles.input}
-            getInputValue={(val) => setUserInfo({ ...userInfo, email: val })}
-          >
+          <InputBox title="Email Address" iconPosition="left" getInputValue={(val) => setUser({ ...user, email: val })}>
             <Ionicons name="mail-outline" size={24} color="#A2A2A7" />
           </InputBox>
           <InputBox
             title="Password"
             iconPosition="inline"
-            boxStyle={styles.input_box}
-            titleStyle={styles.input_title}
-            inputBoxStyle={styles.input_box_box}
-            inputStyle={styles.input}
             isPassword={!passwordVisible}
-            getInputValue={(val) => setUserInfo({ ...userInfo, password: val })}
+            getInputValue={(val) => setUser({ ...user, password: val })}
           >
             <Ionicons name="lock-closed-outline" size={24} color="#A2A2A7" />
             <AntDesign name="eyeo" size={24} color="#A2A2A7" onPress={handleShowVisibility} />

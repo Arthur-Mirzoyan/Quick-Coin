@@ -8,22 +8,26 @@ import OnboardingScreen from '@src/app/screens/Onboarding/Onboarding';
 import SignInScreen from '@screens/SignIn/SignIn';
 import SignUpScreen from '@screens/SignUp/SignUp';
 import MainScreen from '@screens/MainScreen/MainScreen';
+// Providers
+import UserProvider from '@providers/user.provider';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <KeyboardAvoidingView style={styles.main} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-      <NavigationContainer>
-        <StatusBar />
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="onboarding" component={OnboardingScreen} />
-          <Stack.Screen name="signin" component={SignInScreen} />
-          <Stack.Screen name="signup" component={SignUpScreen} />
-          <Stack.Screen name="main" component={MainScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </KeyboardAvoidingView>
+    <UserProvider>
+      <KeyboardAvoidingView style={styles.main} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+        <NavigationContainer>
+          <StatusBar translucent={false} barStyle={'default'} />
+          <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="onboarding" component={OnboardingScreen} />
+            <Stack.Screen name="signin" component={SignInScreen} />
+            <Stack.Screen name="signup" component={SignUpScreen} />
+            <Stack.Screen name="main" component={MainScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </KeyboardAvoidingView>
+    </UserProvider>
   );
 }
 

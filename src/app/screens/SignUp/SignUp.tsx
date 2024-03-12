@@ -43,10 +43,6 @@ function SignUpScreen({ navigation }: any) {
           <InputBox
             title="Full Name"
             iconPosition="left"
-            boxStyle={styles.input_box}
-            titleStyle={styles.input_title}
-            inputBoxStyle={styles.input_box_box}
-            inputStyle={styles.input}
             getInputValue={(val) => setUserInfo({ ...userInfo, fullName: val })}
           >
             <Ionicons name="mail-outline" size={24} color="#A2A2A7" />
@@ -54,10 +50,6 @@ function SignUpScreen({ navigation }: any) {
           <InputBox
             title="Phone Number"
             iconPosition="left"
-            boxStyle={styles.input_box}
-            titleStyle={styles.input_title}
-            inputBoxStyle={styles.input_box_box}
-            inputStyle={styles.input}
             keyboard={KeyboardEnum.Phone}
             getInputValue={(val) => setUserInfo({ ...userInfo, phone: val })}
           >
@@ -66,10 +58,6 @@ function SignUpScreen({ navigation }: any) {
           <InputBox
             title="Email Address"
             iconPosition="left"
-            boxStyle={styles.input_box}
-            titleStyle={styles.input_title}
-            inputBoxStyle={styles.input_box_box}
-            inputStyle={styles.input}
             keyboard={KeyboardEnum.Email}
             getInputValue={(val) => setUserInfo({ ...userInfo, email: val })}
           >
@@ -78,10 +66,6 @@ function SignUpScreen({ navigation }: any) {
           <InputBox
             title="Password"
             iconPosition="inline"
-            boxStyle={styles.input_box}
-            titleStyle={styles.input_title}
-            inputBoxStyle={styles.input_box_box}
-            inputStyle={styles.input}
             isPassword={!passwordVisible}
             getInputValue={(val) => setUserInfo({ ...userInfo, password: val })}
           >
