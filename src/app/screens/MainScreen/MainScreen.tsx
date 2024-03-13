@@ -2,13 +2,13 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { variables } from '@styles/base/variables';
 // Icons
-import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 // Screens
 // Stacks
 import ProfileStack from '@stacks/Profile.stack';
 import ProgressScreen from '@screens/Progress/Progress';
+import HomeScreen from '@screens/Home/Home';
 
 const Tab = createBottomTabNavigator();
 
@@ -38,7 +38,7 @@ function MainScreen() {
       />
       <Tab.Screen
         name="home"
-        component={ProgressScreen}
+        component={HomeScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <Ionicons
