@@ -6,15 +6,20 @@ type PaginatorProps = {
   data: any[];
   scrollX: Animated.Value;
   style?: StyleProp<ViewStyle>;
+  gapBetweenHorizontalItems?: number;
 };
 
-export function Paginator({ data, scrollX, style }: PaginatorProps) {
+export function Paginator({ data, scrollX, style, gapBetweenHorizontalItems = 0 }: PaginatorProps) {
   const { width } = useWindowDimensions();
 
   return (
     <View style={[styles.container, style]}>
       {data.map((_: any, i: number) => {
-        const inputRange = [(i - 1) * width, i * width, (i + 1) * width];
+        const inputRange = [
+          (i - 1) * (width + gapBetweenHorizontalItems),
+          i * (width + gapBetweenHorizontalItems),
+          (i + 1) * (width + gapBetweenHorizontalItems),
+        ];
         const dotWidth = scrollX.interpolate({
           inputRange,
           outputRange: [10, 30, 10],

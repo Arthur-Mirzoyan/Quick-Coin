@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Image, Text } from 'react-native';
-import { styles } from './OnboardingItem.style';
+import { styles } from './CarouselItem.style';
 import { OnboardingItemType } from '../items';
 
-function OnboardingItem(item: OnboardingItemType) {
+export function CarouselItem(item: OnboardingItemType) {
   return (
     <View style={styles.container}>
       <Image source={item.img} style={styles.img} />
@@ -14,5 +14,3 @@ function OnboardingItem(item: OnboardingItemType) {
     </View>
   );
 }
-
-export default OnboardingItem;
