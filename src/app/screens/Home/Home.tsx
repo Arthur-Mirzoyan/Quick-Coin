@@ -1,31 +1,43 @@
 import React from 'react';
-import { SafeAreaView, ScrollView } from 'react-native';
+import { View, SectionList } from 'react-native';
 import { styles } from './Home.style';
-// Models
-import { UserInfoModel } from '@models/UserInfo.model';
 // Custom
 import { UserCard } from '@components/UserCard/UserCard';
-import Carousel from '@screens/Home/Carousel/Carousel';
-import { LinearGradient } from '@node_modules/expo-linear-gradient';
-import GridItem from '@screens/Home/GridItem/GridItem';
+import { Carousel } from '@components/Carousel/Carousel';
+// Components
+import { CarouselItem } from './CarouselItem/CarouselItem';
+import { LinearGradient } from 'expo-linear-gradient';
+import { PrizeGrid } from '@screens/Home/GridItem/GridItem';
 
 function HomeScreen() {
+  const carouselItems = [
+    require('@assets/img/onboarding1.png'),
+    require('@assets/img/onboarding2.png'),
+    require('@assets/img/onboarding3.png'),
+  ];
 
-  const sampleUserInfo: UserInfoModel = {
-    fullName: 'Bob Bobikyan',
-    email: 'bob.bobikyan@gmail.com',
-    password: 'pa$$word',
-    phone: '+123456789',
-    photoUrl: 'https://shorturl.at/hnIQZ',
-  };
+  const sections = [
+    { title: 'UserCard', data: [<UserCard />] },
+    {
+      title: 'Carousel',
+      data: [
+        <Carousel
+          items={carouselItems}
+          renderItem={({ item }) => <CarouselItem img={item} />}
+          horizontal={true}
+          paginatorShown={true}
+          autoScroll={true}
+          autoScrollRate={2000}
+          gapBetweenHorizontalItems={20}
+        />,
+      ],
+    },
+    { title: 'PrizeGrid', data: [<PrizeGrid />] },
+  ];
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <UserCard user={sampleUserInfo} onPress={() => {}} />
-      <SafeAreaView style={styles.container}>
-        <Carousel />
-      </SafeAreaView>
-      <GridItem></GridItem>
+    <View>
+      <SectionList contentContainerStyle={styles.container} sections={sections} renderItem={({ item }) => item} />
       <LinearGradient
         style={styles.ball1}
         colors={['#143A32', '#249880', '#D2DFDD']}
@@ -50,8 +62,7 @@ function HomeScreen() {
         start={[0.1, 0.3]}
         end={[0.7, 0.9]}
       />
-    </ScrollView>
-
+    </View>
   );
 }
 

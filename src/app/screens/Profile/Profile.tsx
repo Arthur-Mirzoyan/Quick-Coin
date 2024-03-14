@@ -31,7 +31,7 @@ function ProfileScreen({ navigation }: any) {
     <>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.header}>
-          <UserCard user={userInfo} style={styles.user_card} />
+          <UserCard style={styles.user_card} />
           <Pressable style={styles.edit_button} onPress={() => setModalVisible(true)}>
             <MaterialIcons name="edit" size={30} color="white" />
           </Pressable>

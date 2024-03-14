@@ -7,9 +7,8 @@ const ball4Bottom = 160;
 
 export const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
     padding: variables.paddings.xl,
-    gap: 20
+    gap: variables.spacings.xs,
   },
   ball1: {
     width: 110,
