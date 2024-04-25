@@ -4,17 +4,18 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@*": ["./*"],
       "@components/*": ["src/app/components/*"],
       "@constants/*": ["src/app/constants/*"],
       "@screens/*": ["src/app/screens/*"],
+      "@stacks/*": ["src/app/stacks/*"],
       "@services/*": ["src/app/services/*"],
       "@providers/*": ["src/app/providers/*"],
-      "@helpers/*": ["src/app/helpers/*"],
+      "@utils/*": ["src/app/utils/*"],
       "@models/*": ["src/app/models/*"],
       "@enums/*": ["src/app/enums/*"],
       "@styles/*": ["src/styles/*"],
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["assets/*"],
+      "@*": ["./*"]
     }
   }
 }
