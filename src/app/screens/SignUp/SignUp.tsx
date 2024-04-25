@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { styles } from './SignUp.styles';
-// Custom
 import { Button } from '@components/Button/Button';
 import { InputBox } from '@components/InputBox/InputBox';
-// Icons
-import { Ionicons, MaterialCommunityIcons, AntDesign, Entypo } from '@expo/vector-icons';
-// Models
+import { Ionicons, MaterialCommunityIcons, AntDesign, Entypo, Feather } from '@expo/vector-icons';
 import { UserInfoModel } from '@models/UserInfo.model';
 import { KeyboardEnum } from '@enums/Keyboard.enum';
-import { Feather } from '@expo/vector-icons';
 
 function SignUpScreen({ navigation }: any) {
   const [userInfo, setUserInfo] = useState<UserInfoModel>({

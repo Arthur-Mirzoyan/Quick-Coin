@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import { ScrollView, View, Pressable } from 'react-native';
 import { styles } from './Profile.style';
-// Icons
 import { MaterialIcons, Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-// Providers
 import { useUser } from '@providers/user.provider';
-// Models
 import { BalanceCardModel } from '@models/BalanceCard.model';
-// Custom
 import { UserCard } from '@components/UserCard/UserCard';
 import { BalanceCard } from '@components/BalanceCard/BalanceCard';
 import { InputBox } from '@components/InputBox/InputBox';

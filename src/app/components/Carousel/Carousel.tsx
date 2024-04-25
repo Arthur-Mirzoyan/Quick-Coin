@@ -8,7 +8,6 @@ import {
   ViewStyle,
   ListRenderItem,
 } from 'react-native';
-// Custom
 import { Paginator } from '@components/Paginator/Paginator';
 import { useFocusEffect } from '@react-navigation/native';
 

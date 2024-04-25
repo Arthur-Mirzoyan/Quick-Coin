@@ -3,12 +3,10 @@ import { StyleSheet, StatusBar, KeyboardAvoidingView, Platform } from 'react-nat
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { variables } from '@styles/base/variables';
-//Screens
 import OnboardingScreen from '@src/app/screens/Onboarding/Onboarding';
 import SignInScreen from '@screens/SignIn/SignIn';
 import SignUpScreen from '@screens/SignUp/SignUp';
 import MainScreen from '@screens/MainScreen/MainScreen';
-// Providers
 import UserProvider from '@providers/user.provider';
 
 const Stack = createNativeStackNavigator();

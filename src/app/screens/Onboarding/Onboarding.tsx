@@ -1,10 +1,8 @@
 import React, { RefObject, useState } from 'react';
 import { View, FlatList, NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
 import { styles } from './Onboarding.style';
-// Components
 import { items } from './items';
 import { CarouselItem } from './CarouselItem/CarouselItem';
-// Custom
 import { Button } from '@components/Button/Button';
 import { Carousel } from '@components/Carousel/Carousel';
 

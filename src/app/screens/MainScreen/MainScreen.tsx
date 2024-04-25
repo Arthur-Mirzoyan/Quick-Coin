@@ -1,11 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { variables } from '@styles/base/variables';
-// Icons
-import { Ionicons } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-// Screens
-// Stacks
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import ProfileStack from '@stacks/Profile.stack';
 import ProgressScreen from '@screens/Progress/Progress';
 import HomeScreen from '@screens/Home/Home';

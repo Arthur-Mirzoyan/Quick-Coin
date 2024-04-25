@@ -1,7 +1,6 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { styles } from './Progress.style';
-// Custom
 import { SubjectProgressCard } from '@components/SubjectProgressCard/SubjectProgressCard';
 
 function ProgressScreen() {

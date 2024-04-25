@@ -1,13 +1,11 @@
 import React from 'react';
 import { View, SectionList } from 'react-native';
 import { styles } from './Home.style';
-// Custom
 import { UserCard } from '@components/UserCard/UserCard';
 import { Carousel } from '@components/Carousel/Carousel';
-// Components
 import { CarouselItem } from './CarouselItem/CarouselItem';
 import { LinearGradient } from 'expo-linear-gradient';
-import { PrizeGrid } from '@screens/Home/GridItem/GridItem';
+import { PrizeGrid } from '@screens/Home/PrizeGrid/PrizeGrid';
 
 function HomeScreen() {
   const carouselItems = [

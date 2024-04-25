@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, Image, Pressable, GestureResponderEvent, StyleProp, ViewStyle } from 'react-native';
 import { styles } from './UserCard.style';
-// Providers
 import { useUser } from '@providers/user.provider';
 
 type UserCardProps = {

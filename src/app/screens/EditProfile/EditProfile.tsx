@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import { ScrollView, View } from 'react-native';
 import { styles } from './EditProfile.style';
-// Providers
 import { useUser } from '@providers/user.provider';
-// Models
 import { UserInfoModel } from '@models/UserInfo.model';
-// Enums
 import { KeyboardEnum } from '@enums/Keyboard.enum';
-// Icons
 import { Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-// Custom
 import { InputBox } from '@components/InputBox/InputBox';
 import { Button } from '@components/Button/Button';
 

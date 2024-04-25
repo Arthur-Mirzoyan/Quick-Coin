@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { ScrollView, View } from 'react-native';
 import { styles } from './ChangePassword.style';
-// Providers
-// Models
-// Icons
-import { Ionicons, AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
-// Custom
+import { Ionicons, AntDesign } from '@expo/vector-icons';
 import { InputBox } from '@components/InputBox/InputBox';
 import { Button } from '@components/Button/Button';
 

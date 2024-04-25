@@ -1,11 +1,8 @@
 import React from 'react';
-import { View, FlatList } from 'react-native';
-import { styles } from './GridItem.style';
-// Icons
+import { FlatList } from 'react-native';
+import { styles } from './PrizeGrid.style';
 import { FontAwesome5, Entypo, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
-// Custom
 import { Button } from '@components/Button/Button';
-// Components
 import { BlurView } from 'expo-blur';
 import { variables } from '@styles/base/variables';
 

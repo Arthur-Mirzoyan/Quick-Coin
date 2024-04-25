@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { styles } from './SignIn.styles';
-// Custom
 import { Button } from '@components/Button/Button';
 import { InputBox } from '@components/InputBox/InputBox';
-// Icons
-import { Ionicons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
-// Models
+import { Ionicons, Entypo, AntDesign } from '@expo/vector-icons';
 import { UserInfoModel } from '@models/UserInfo.model';
 import { useUser } from '@providers/user.provider';
 
