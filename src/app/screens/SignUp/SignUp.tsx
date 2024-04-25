@@ -4,21 +4,17 @@ import { styles } from './SignUp.styles';
 import { Button } from '@components/Button/Button';
 import { InputBox } from '@components/InputBox/InputBox';
 import { Ionicons, MaterialCommunityIcons, AntDesign, Entypo, Feather } from '@expo/vector-icons';
-import { UserInfoModel } from '@models/UserInfo.model';
+import { UserModel } from '@models/user.model';
 import { KeyboardEnum } from '@enums/Keyboard.enum';
 
 function SignUpScreen({ navigation }: any) {
-  const [userInfo, setUserInfo] = useState<UserInfoModel>({
+  const [userInfo, setUserInfo] = useState<UserModel>({
     email: '',
     password: '',
     fullName: '',
     phone: '',
   });
   const [passwordVisible, setPasswordVisible] = useState<boolean>(false);
-
-  const goBack = (): void => {
-    navigation.goBack();
-  };
 
   const signup = (): void => {
     console.log(userInfo);
@@ -28,7 +24,7 @@ function SignUpScreen({ navigation }: any) {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Pressable style={styles.back_btn} onPress={goBack}>
+      <Pressable style={styles.back_btn} onPress={navigation.goBack}>
         <Entypo name="chevron-left" size={25} color="white" />
       </Pressable>
       <View style={styles.main}>
@@ -74,7 +70,7 @@ function SignUpScreen({ navigation }: any) {
             buttonStyle={styles.signup_button}
             textStyle={styles.signup_button_text}
           />
-          <Pressable style={styles.signin_button} onPress={goBack}>
+          <Pressable style={styles.signin_button} onPress={navigation.goBack}>
             <Text style={styles.signin_button_text}>Already have an account?</Text>
             <Text style={[styles.signin_button_text, styles.signup_button_text_signup]}>Sign In</Text>
           </Pressable>

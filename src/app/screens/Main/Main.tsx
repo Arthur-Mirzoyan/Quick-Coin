@@ -2,9 +2,9 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { variables } from '@styles/base/variables';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
-import ProfileStack from '@stacks/Profile.stack';
+import ProfileStack from '@stacks/profile.stack';
 import ProgressScreen from '@screens/Progress/Progress';
-import HomeScreen from '@screens/Home/Home';
+import HomeStack from '@stacks/home.stack';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,6 +18,7 @@ function MainScreen() {
           backgroundColor: variables.colors.primary,
         },
       }}
+      initialRouteName="home"
     >
       <Tab.Screen
         name="progress"
@@ -34,7 +35,7 @@ function MainScreen() {
       />
       <Tab.Screen
         name="home"
-        component={HomeScreen}
+        component={HomeStack}
         options={{
           tabBarIcon: ({ focused }) => (
             <Ionicons

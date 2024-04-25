@@ -2,25 +2,24 @@ import React, { useState } from 'react';
 import { ScrollView, View } from 'react-native';
 import { styles } from './EditProfile.style';
 import { useUser } from '@providers/user.provider';
-import { UserInfoModel } from '@models/UserInfo.model';
+import { UserModel } from '@models/user.model';
 import { KeyboardEnum } from '@enums/Keyboard.enum';
 import { Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { InputBox } from '@components/InputBox/InputBox';
 import { Button } from '@components/Button/Button';
 
 function EditProfileScreen({ navigation }: any) {
-  const { userInfo, setUserInfo } = useUser();
-
-  const [userData, setUserData] = useState<Partial<UserInfoModel>>({
-    email: userInfo.email,
-    fullName: userInfo.fullName,
-    phone: userInfo.phone,
+  const { user, setUser } = useUser();
+  const [userData, setUserData] = useState<Partial<UserModel>>({
+    email: user.email,
+    fullName: user.fullName,
+    phone: user.phone,
   });
 
   const updateUserData = async (): Promise<void> => {
     // await updateUser(userData);
-    let newInfo: UserInfoModel = { ...userInfo, ...userData };
-    setUserInfo(newInfo);
+    let newInfo: UserModel = { ...user, ...userData };
+    setUser(newInfo);
     navigation.goBack();
   };
 
@@ -30,7 +29,7 @@ function EditProfileScreen({ navigation }: any) {
         <InputBox
           title="Full Name"
           iconPosition="left"
-          defaultValue={userInfo.fullName}
+          defaultValue={user.fullName}
           getInputValue={(val) => setUserData({ ...userData, fullName: val })}
         >
           <MaterialCommunityIcons name="account-outline" size={24} color="#A2A2A7" />
@@ -39,7 +38,7 @@ function EditProfileScreen({ navigation }: any) {
           title="Phone Number"
           iconPosition="left"
           keyboard={KeyboardEnum.Phone}
-          defaultValue={userInfo.phone}
+          defaultValue={user.phone}
           getInputValue={(val) => setUserData({ ...userData, phone: val })}
         >
           <Feather name="phone" size={24} color="#A2A2A7" />
@@ -48,7 +47,7 @@ function EditProfileScreen({ navigation }: any) {
           title="Email Address"
           iconPosition="left"
           keyboard={KeyboardEnum.Email}
-          defaultValue={userInfo.email}
+          defaultValue={user.email}
           getInputValue={(val) => setUserData({ ...userData, email: val })}
         >
           <Ionicons name="mail-outline" size={24} color="#A2A2A7" />

@@ -3,7 +3,7 @@ import { ScrollView, View, Pressable } from 'react-native';
 import { styles } from './Profile.style';
 import { MaterialIcons, Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useUser } from '@providers/user.provider';
-import { BalanceCardModel } from '@models/BalanceCard.model';
+import { BalanceCardModel } from '@models/balanceCard.model';
 import { UserCard } from '@components/UserCard/UserCard';
 import { BalanceCard } from '@components/BalanceCard/BalanceCard';
 import { InputBox } from '@components/InputBox/InputBox';
@@ -11,7 +11,7 @@ import { Popup } from '@components/Popup/Popup';
 import { Button } from '@components/Button/Button';
 
 function ProfileScreen({ navigation }: any) {
-  const { userInfo } = useUser();
+  const { user } = useUser();
 
   const sampleCard: BalanceCardModel = {
     balance: 2000,
@@ -34,13 +34,13 @@ function ProfileScreen({ navigation }: any) {
         </View>
         <BalanceCard {...sampleCard} />
         <View style={styles.info_view}>
-          <InputBox title="Full Name" iconPosition="left" value={userInfo.fullName} readonly={true}>
+          <InputBox title="Full Name" iconPosition="left" value={user.fullName} readonly={true}>
             <MaterialCommunityIcons name="account-outline" size={24} color="#A2A2A7" />
           </InputBox>
-          <InputBox title="Phone Number" iconPosition="left" value={userInfo.phone} readonly={true}>
+          <InputBox title="Phone Number" iconPosition="left" value={user.phone} readonly={true}>
             <Feather name="phone" size={24} color="#A2A2A7" />
           </InputBox>
-          <InputBox title="Email Address" iconPosition="left" value={userInfo.email} readonly={true}>
+          <InputBox title="Email Address" iconPosition="left" value={user.email} readonly={true}>
             <Ionicons name="mail-outline" size={24} color="#A2A2A7" />
           </InputBox>
         </View>

@@ -1,5 +1,6 @@
-import { variables } from '@styles/base/variables';
 import { StyleSheet } from 'react-native';
+import { variables } from '@styles/base/variables';
+
 const ball1Top = 330;
 const ball2Bottom = -50;
 const ball3Bottom = 70;

@@ -7,7 +7,7 @@ import { CarouselItem } from './CarouselItem/CarouselItem';
 import { LinearGradient } from 'expo-linear-gradient';
 import { PrizeGrid } from '@screens/Home/PrizeGrid/PrizeGrid';
 
-function HomeScreen() {
+function HomeScreen({ navigation }: any) {
   const carouselItems = [
     require('@assets/img/onboarding1.png'),
     require('@assets/img/onboarding2.png'),
@@ -30,7 +30,7 @@ function HomeScreen() {
         />,
       ],
     },
-    { title: 'PrizeGrid', data: [<PrizeGrid />] },
+    { title: 'PrizeGrid', data: [<PrizeGrid navigation={navigation} />] },
   ];
 
   return (

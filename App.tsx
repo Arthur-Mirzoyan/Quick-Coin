@@ -6,7 +6,7 @@ import { variables } from '@styles/base/variables';
 import OnboardingScreen from '@src/app/screens/Onboarding/Onboarding';
 import SignInScreen from '@screens/SignIn/SignIn';
 import SignUpScreen from '@screens/SignUp/SignUp';
-import MainScreen from '@screens/MainScreen/MainScreen';
+import MainScreen from '@screens/Main/Main';
 import UserProvider from '@providers/user.provider';
 
 const Stack = createNativeStackNavigator();
