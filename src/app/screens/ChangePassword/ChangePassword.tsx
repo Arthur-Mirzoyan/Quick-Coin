@@ -29,7 +29,7 @@ function ChangePasswordScreen({ navigation }: any) {
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.info_view}>
         <InputBox
-          title="Current Password"
+          title="Ներկայիս գաղտնաբառը"
           iconPosition="inline"
           isPassword={currentPasswordVisibility}
           getInputValue={(val) => setUserData({ ...userData, current: val })}
@@ -43,7 +43,7 @@ function ChangePasswordScreen({ navigation }: any) {
           />
         </InputBox>
         <InputBox
-          title="New Password"
+          title="Նոր գաղտնաբառը"
           iconPosition="inline"
           isPassword={newPasswordVisibility}
           getInputValue={(val) => setUserData({ ...userData, new: val })}
@@ -52,7 +52,7 @@ function ChangePasswordScreen({ navigation }: any) {
           <AntDesign name="eyeo" size={24} color="#A2A2A7" onPress={() => setNewPasswordVisibility((prev) => !prev)} />
         </InputBox>
         <InputBox
-          title="Confirm New Password"
+          title="Հաստատել նոր գաղտնաբառը"
           iconPosition="inline"
           isPassword={confirmPasswordVisibility}
           getInputValue={(val) => setUserData({ ...userData, confirm: val })}
@@ -67,7 +67,7 @@ function ChangePasswordScreen({ navigation }: any) {
         </InputBox>
       </View>
       <Button
-        title="Change"
+        title="Փոխել"
         onPress={updatePassword}
         buttonStyle={styles.save_button}
         textStyle={styles.save_button_text}

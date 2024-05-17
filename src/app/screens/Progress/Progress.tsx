@@ -6,10 +6,10 @@ import { SubjectProgressCard } from '@components/SubjectProgressCard/SubjectProg
 function ProgressScreen() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <SubjectProgressCard title="English" coinsGained={0} totalCoins={100} />
-      <SubjectProgressCard title="History" coinsGained={32} totalCoins={100} />
-      <SubjectProgressCard title="Maths" coinsGained={100} totalCoins={100} />
-      <SubjectProgressCard title="Armenian" coinsGained={90} totalCoins={100} />
+      <SubjectProgressCard title="Անգլերեն" coinsGained={0} totalCoins={100} />
+      <SubjectProgressCard title="Պատմություն" coinsGained={32} totalCoins={100} />
+      <SubjectProgressCard title="Մաթեմատիկա" coinsGained={100} totalCoins={100} />
+      <SubjectProgressCard title="Հայոց լեզու" coinsGained={90} totalCoins={100} />
     </ScrollView>
   );
 }

@@ -38,7 +38,7 @@ function OnboardingScreen({ navigation }: any) {
         />
       </View>
       <View style={styles.footer}>
-        <Button title="Next" onPress={showNextItem} buttonStyle={styles.button} textStyle={styles.button_text} />
+        <Button title="Առաջ" onPress={showNextItem} buttonStyle={styles.button} textStyle={styles.button_text} />
       </View>
     </View>
   );

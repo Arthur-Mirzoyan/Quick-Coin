@@ -34,13 +34,13 @@ function ProfileScreen({ navigation }: any) {
         </View>
         <BalanceCard {...sampleCard} />
         <View style={styles.info_view}>
-          <InputBox title="Full Name" iconPosition="left" value={userInfo.fullName} readonly={true}>
+          <InputBox title="Անուն Ազգանուն" iconPosition="left" value={userInfo.fullName} readonly={true}>
             <MaterialCommunityIcons name="account-outline" size={24} color="#A2A2A7" />
           </InputBox>
-          <InputBox title="Phone Number" iconPosition="left" value={userInfo.phone} readonly={true}>
+          <InputBox title="Հեռախոսահամար" iconPosition="left" value={userInfo.phone} readonly={true}>
             <Feather name="phone" size={24} color="#A2A2A7" />
           </InputBox>
-          <InputBox title="Email Address" iconPosition="left" value={userInfo.email} readonly={true}>
+          <InputBox title="Էլեկտրոնային հասցե" iconPosition="left" value={userInfo.email} readonly={true}>
             <Ionicons name="mail-outline" size={24} color="#A2A2A7" />
           </InputBox>
         </View>
@@ -48,19 +48,19 @@ function ProfileScreen({ navigation }: any) {
       <Popup modalVisibility={modalVisible} setModalVisibility={setModalVisible}>
         <View style={styles.modal_view}>
           <Button
-            title="Edit Profile Photo"
+            title="Փոխել գլխավոր նկարը"
             onPress={() => {}}
             buttonStyle={styles.edit_option_button}
             textStyle={styles.edit_button_button_text}
           />
           <Button
-            title="Edit General Info"
+            title="Փոխել անձնական տվյալ"
             onPress={() => navigation.push('edit')}
             buttonStyle={styles.edit_option_button}
             textStyle={styles.edit_button_button_text}
           />
           <Button
-            title="Change Password"
+            title="Փոխել գաղտնաբառը"
             onPress={() => navigation.push('changePassword')}
             buttonStyle={styles.edit_option_button}
             textStyle={styles.edit_button_button_text}

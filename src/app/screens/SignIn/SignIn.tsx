@@ -46,13 +46,13 @@ function SignInScreen({ navigation }: any) {
         <Entypo name="chevron-left" size={25} color="white" />
       </Pressable>
       <View style={styles.main}>
-        <Text style={styles.main_title}>Sign In</Text>
+        <Text style={styles.main_title}>Մուտք գործել</Text>
         <View style={styles.inputs_view}>
-          <InputBox title="Email Address" iconPosition="left" getInputValue={(val) => setUser({ ...user, email: val })}>
+          <InputBox title="Էլեկտրոնային հասցե" iconPosition="left" getInputValue={(val) => setUser({ ...user, email: val })}>
             <Ionicons name="mail-outline" size={24} color="#A2A2A7" />
           </InputBox>
           <InputBox
-            title="Password"
+            title="Գաղտնաբառ"
             iconPosition="inline"
             isPassword={!passwordVisible}
             getInputValue={(val) => setUser({ ...user, password: val })}
@@ -63,14 +63,14 @@ function SignInScreen({ navigation }: any) {
         </View>
         <View style={styles.footer}>
           <Button
-            title="Sign In"
+            title="Մուտք գործել"
             onPress={signin}
             buttonStyle={styles.signin_button}
             textStyle={styles.signin_button_text}
           />
           <Pressable style={styles.signup_button} onPress={goToSignUp}>
-            <Text style={styles.signup_button_text}>Don't have an account?</Text>
-            <Text style={[styles.signup_button_text, styles.signup_button_text_signup]}>Sign Up</Text>
+            <Text style={styles.signup_button_text}>Գրանցված չե՞ք։ </Text>
+            <Text style={[styles.signup_button_text, styles.signup_button_text_signup]}>Գրանցվել։ </Text>
           </Pressable>
         </View>
       </View>

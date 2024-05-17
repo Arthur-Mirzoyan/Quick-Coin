@@ -19,7 +19,7 @@ export function UserCard({ style, onPress }: UserCardProps) {
         defaultSource={require('@assets/img/no-profile.png')}
       />
       <View style={styles.welcoming_box}>
-        <Text style={styles.welcoming_text}>Welcome back,</Text>
+        <Text style={styles.welcoming_text}>Բարի գալուստ,</Text>
         <Text style={styles.user_name}>{userInfo.fullName}</Text>
       </View>
     </Pressable>

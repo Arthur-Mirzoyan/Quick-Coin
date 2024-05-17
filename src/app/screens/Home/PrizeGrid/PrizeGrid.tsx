@@ -13,19 +13,19 @@ export function PrizeGrid() {
   const items = [
     {
       icon: <FontAwesome5 name="chess-knight" size={iconSize} color={iconColor} />,
-      title: 'Games',
+      title: 'Խաղեր',
     },
     {
       icon: <Ionicons name="ticket-sharp" size={iconSize} color={iconColor} />,
-      title: 'Tickets',
+      title: 'Տոմսեր',
     },
     {
       icon: <Entypo name="book" size={iconSize} color={iconColor} />,
-      title: 'Books',
+      title: 'Գրքեր',
     },
     {
       icon: <MaterialCommunityIcons name="ticket-percent" size={iconSize} color={iconColor} />,
-      title: 'Coupon',
+      title: 'Կուպոններ',
     },
   ];
 

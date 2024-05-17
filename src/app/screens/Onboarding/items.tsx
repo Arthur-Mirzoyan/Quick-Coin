@@ -9,18 +9,18 @@ export type OnboardingItemType = {
 export const items: OnboardingItemType[] = [
   {
     img: require('@assets/img/onboarding1.png'),
-    title: 'The first currency system in college',
-    description: 'Register and practice subjects with us',
+    title: 'Առաջին բոնուսային համակարգը քոլեջում',
+    description: 'Գրանցվեք և սովորեք մեզ հետ',
   },
   {
     img: require('@assets/img/onboarding2.png'),
-    title: 'Increase your knowledge base',
+    title: 'Ամրապնդեք Ձեր գիտելիքները',
     description:
-      'By passing the tests, you will begin to remember the correct answers and increase your knowledge base.',
+      'Թեստերը հանձնելով՝ Դուք ավելի հեշտ և արդյունավետ կսովորեք, կգտնեք Ձեր թույլ կողմերն ու կաշխատեք դրանց ուժեղացման վրա',
   },
   {
     img: require('@assets/img/onboarding3.png'),
-    title: 'Get coins by answering questions',
-    description: 'Spend the coins to buy gifts provided by the college',
+    title: 'Հավաքեք միավորներ՝ պատասխանելով հարցերին',
+    description: 'Միավորները փոխանակեք քոլեջի կողմից տրված նվերներով',
   },
 ];

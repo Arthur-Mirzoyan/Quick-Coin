@@ -28,7 +28,7 @@ function EditProfileScreen({ navigation }: any) {
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.info_view}>
         <InputBox
-          title="Full Name"
+          title="Անուն Ազգանուն"
           iconPosition="left"
           defaultValue={userInfo.fullName}
           getInputValue={(val) => setUserData({ ...userData, fullName: val })}
@@ -36,7 +36,7 @@ function EditProfileScreen({ navigation }: any) {
           <MaterialCommunityIcons name="account-outline" size={24} color="#A2A2A7" />
         </InputBox>
         <InputBox
-          title="Phone Number"
+          title="Հեռախոսահամար"
           iconPosition="left"
           keyboard={KeyboardEnum.Phone}
           defaultValue={userInfo.phone}
@@ -45,7 +45,7 @@ function EditProfileScreen({ navigation }: any) {
           <Feather name="phone" size={24} color="#A2A2A7" />
         </InputBox>
         <InputBox
-          title="Email Address"
+          title="Էլեկտրոնային հասցե"
           iconPosition="left"
           keyboard={KeyboardEnum.Email}
           defaultValue={userInfo.email}
@@ -55,7 +55,7 @@ function EditProfileScreen({ navigation }: any) {
         </InputBox>
       </View>
       <Button
-        title="Save"
+        title="Պահպանել"
         onPress={updateUserData}
         buttonStyle={styles.save_button}
         textStyle={styles.save_button_text}

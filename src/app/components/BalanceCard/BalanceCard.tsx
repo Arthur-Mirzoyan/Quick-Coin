@@ -28,13 +28,13 @@ export function BalanceCard(card: BalanceCardModel) {
               <Text style={styles.card_code}>{cardCode[3]}</Text>
             </View>
             <View style={styles.balance_box}>
-              <Text style={styles.small_text}>Your balance</Text>
-              <Text style={styles.small_text}>{card.balance} coins</Text>
+              <Text style={styles.small_text}>Ձեր հաշիվը</Text>
+              <Text style={styles.small_text}>{card.balance} միավոր</Text>
             </View>
           </View>
           <View style={styles.card_footer}>
             <View style={[styles.vertical_box, { flex: 0.25 }]}>
-              <Text style={styles.small_text}>Expr. Date</Text>
+              <Text style={styles.small_text}>Սպառման ամս.</Text>
               <Text style={styles.small_text}>
                 {card.expMonth}/{card.expYear}
               </Text>
