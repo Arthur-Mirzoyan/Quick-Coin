@@ -1,8 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { variables } from '@styles/base/variables';
 
-const { width: screenWidth, height: screenHeight } = Dimensions.get('screen');
-
 export const styles = StyleSheet.create({
   modal: {
     flex: 1,

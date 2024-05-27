@@ -1,17 +1,16 @@
 import React, { PropsWithChildren } from 'react';
 import { View } from 'react-native';
-import { styles } from './Popup.style';
 import Modal from 'react-native-modal';
+import { styles } from './Popup.style';
 
 type PopupProps = {
   modalVisibility: boolean;
   setModalVisibility: Function;
   onClose?: Function;
-  transparent?: boolean;
 };
 
 export function Popup(props: PropsWithChildren<PopupProps>) {
-  const { modalVisibility, setModalVisibility, children, transparent, onClose } = props;
+  const { modalVisibility, setModalVisibility, children, onClose } = props;
 
   return (
     <Modal
@@ -23,7 +22,10 @@ export function Popup(props: PropsWithChildren<PopupProps>) {
         onClose?.();
         setModalVisibility(false);
       }}
-      onBackButtonPress={() => setModalVisibility((prev: boolean) => !prev)}
+      onBackButtonPress={() => {
+        onClose?.();
+        setModalVisibility(false);
+      }}
     >
       <View style={styles.modal_box}>{children}</View>
     </Modal>

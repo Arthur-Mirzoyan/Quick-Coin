@@ -1,5 +1,5 @@
-import { variables } from '@styles/base/variables';
 import { StyleSheet } from 'react-native';
+import { variables } from '@styles/base/variables';
 
 export const styles = StyleSheet.create({
   container: {

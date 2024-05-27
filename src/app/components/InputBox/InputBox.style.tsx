@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     borderBottomColor: variables.colors.border,
   },
   title: {
-    color: variables.colors.textGray,
+    color: variables.colors.primary,
     fontSize: variables.fontSizes.m,
     fontWeight: '400',
   },
