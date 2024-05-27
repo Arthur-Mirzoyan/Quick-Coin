@@ -1,12 +1,12 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { styles } from './PrizeGrid.style';
+import { styles } from './GiftGrid.style';
 import { FontAwesome5, Entypo, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Button } from '@components/Button/Button';
 import { BlurView } from 'expo-blur';
 import { variables } from '@styles/base/variables';
 
-export function PrizeGrid() {
+export function GiftGrid() {
   const iconSize = 60;
   const iconColor = variables.colors.secondary;
 
@@ -33,8 +33,6 @@ export function PrizeGrid() {
     <FlatList
       data={items}
       numColumns={2}
-      // columnWrapperStyle={{ gap: 10 }}
-      // contentContainerStyle={{ gap: 10 }}
       renderItem={({ item }) => (
         <BlurView intensity={55} tint="light" style={styles.card}>
           <Button

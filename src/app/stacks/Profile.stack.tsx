@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import EditProfileScreen from '@screens/EditProfile/EditProfile';
 import ChangePasswordScreen from '@screens/ChangePassword/ChangePassword';
 import ProfileScreen from '@screens/Profile/Profile';
+import AdminStack from './admin.stack';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,6 +13,7 @@ function ProfileStack() {
       <Stack.Screen options={{ headerShown: false }} name="main" component={ProfileScreen} />
       <Stack.Screen options={{ title: 'General' }} name="edit" component={EditProfileScreen} />
       <Stack.Screen options={{ title: 'Password' }} name="changePassword" component={ChangePasswordScreen} />
+      <Stack.Screen options={{ headerShown: false }} name="admin" component={AdminStack} />
     </Stack.Navigator>
   );
 }

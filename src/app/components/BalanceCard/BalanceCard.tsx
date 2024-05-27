@@ -1,10 +1,9 @@
 import React from 'react';
 import { View, Image, Text } from 'react-native';
 import { styles } from './BalanceCard.style';
-
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
-import { BalanceCardModel } from '@models/BalanceCard.model';
+import { BalanceCardModel } from '@models/balanceCard.model';
 
 export function BalanceCard(card: BalanceCardModel) {
   const cardCode = card.code.split(' ');

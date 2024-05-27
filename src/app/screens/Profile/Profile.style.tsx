@@ -18,12 +18,9 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   edit_button: {
-    backgroundColor: variables.colors.primary,
+    backgroundColor: variables.colors.secondary,
     borderRadius: 100,
-    width: 50,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
+    padding: variables.paddings.m * 1.25,
   },
   info_view: {
     gap: variables.spacings.xl,
@@ -42,19 +39,20 @@ export const styles = StyleSheet.create({
     backgroundColor: variables.colors.secondary,
     borderRadius: variables.borderRadius.l,
     padding: variables.paddings.m,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 4.65,
-
-    elevation: 8,
   },
   edit_button_button_text: {
     color: variables.colors.textLight,
     fontWeight: '500',
     fontSize: variables.fontSizes.m,
+  },
+  admin_button: {
+    backgroundColor: variables.colors.secondary,
+    borderRadius: variables.borderRadius.l,
+    padding: variables.paddings.m,
+    marginTop: variables.margins.l,
+  },
+  admin_text: {
+    color: variables.colors.textLight,
+    fontSize: variables.fontSizes.l,
   },
 });

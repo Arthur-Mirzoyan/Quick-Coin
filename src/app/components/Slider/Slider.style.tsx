@@ -3,21 +3,10 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    width: '100%',
     gap: variables.spacings.m,
-    backgroundColor: variables.colors.primary,
-    borderRadius: variables.borderRadius.xl,
-    paddingHorizontal: variables.paddings.xxl,
-    paddingVertical: variables.paddings.l,
-  },
-  title: {
-    fontSize: variables.fontSizes.l,
-    fontWeight: '500',
-    color: variables.colors.textLight,
   },
   slider: {
-    backgroundColor: '#525151',
+    backgroundColor: '#929191',
     borderRadius: variables.borderRadius.xxl,
     height: 10,
     width: '100%',

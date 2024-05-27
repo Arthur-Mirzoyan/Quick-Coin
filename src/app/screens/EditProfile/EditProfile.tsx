@@ -2,25 +2,17 @@ import React, { useState } from 'react';
 import { ScrollView, View } from 'react-native';
 import { styles } from './EditProfile.style';
 import { useUser } from '@providers/user.provider';
-import { UserInfoModel } from '@models/UserInfo.model';
-import { KeyboardEnum } from '@enums/Keyboard.enum';
-import { Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { InputBox } from '@components/InputBox/InputBox';
 import { Button } from '@components/Button/Button';
 
 function EditProfileScreen({ navigation }: any) {
-  const { userInfo, setUserInfo } = useUser();
-
-  const [userData, setUserData] = useState<Partial<UserInfoModel>>({
-    email: userInfo.email,
-    fullName: userInfo.fullName,
-    phone: userInfo.phone,
-  });
+  const { user, setUser } = useUser();
+  const [data, setData] = useState({ password: '', fullName: user.fullName });
 
   const updateUserData = async (): Promise<void> => {
-    // await updateUser(userData);
-    let newInfo: UserInfoModel = { ...userInfo, ...userData };
-    setUserInfo(newInfo);
+    // check password then update
+    // setUser({ ...user, fullName: data.fullName });
     navigation.goBack();
   };
 
@@ -29,30 +21,18 @@ function EditProfileScreen({ navigation }: any) {
       <View style={styles.info_view}>
         <InputBox
           title="Full Name"
-          iconPosition="left"
-          defaultValue={userInfo.fullName}
-          getInputValue={(val) => setUserData({ ...userData, fullName: val })}
-        >
-          <MaterialCommunityIcons name="account-outline" size={24} color="#A2A2A7" />
-        </InputBox>
+          icon={{ left: <MaterialCommunityIcons name="account-outline" size={24} color="#A2A2A7" /> }}
+          defaultValue={data.fullName}
+          getInputValue={(val) => setData({ ...data, fullName: val })}
+        />
         <InputBox
-          title="Phone Number"
-          iconPosition="left"
-          keyboard={KeyboardEnum.Phone}
-          defaultValue={userInfo.phone}
-          getInputValue={(val) => setUserData({ ...userData, phone: val })}
-        >
-          <Feather name="phone" size={24} color="#A2A2A7" />
-        </InputBox>
-        <InputBox
-          title="Email Address"
-          iconPosition="left"
-          keyboard={KeyboardEnum.Email}
-          defaultValue={userInfo.email}
-          getInputValue={(val) => setUserData({ ...userData, email: val })}
-        >
-          <Ionicons name="mail-outline" size={24} color="#A2A2A7" />
-        </InputBox>
+          title="Password"
+          icon={{ left: <MaterialCommunityIcons name="account-outline" size={24} color="#A2A2A7" /> }}
+          isPassword
+          visibilityIcon
+          visibilityIconColor="#A2A2A7"
+          getInputValue={(val) => setData({ ...data, password: val })}
+        />
       </View>
       <Button
         title="Save"

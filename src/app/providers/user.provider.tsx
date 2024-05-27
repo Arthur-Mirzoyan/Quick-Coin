@@ -1,27 +1,16 @@
 import { PropsWithChildren, useContext, useState } from 'react';
 import { createContext } from 'react';
-import { Helper } from '@utils/helper';
-import { UserInfoModel } from '@models/UserInfo.model';
+import { UserModel } from '@models/user.model';
+import { Generator } from '@utils/generator';
 
-type User = {
-  userInfo: UserInfoModel;
-  setUserInfo: Function;
-};
-
-const UserContext = createContext<User>({
-  userInfo: Helper.generateUserInfo(),
-  setUserInfo: (info: UserInfoModel) => {},
+const UserContext = createContext({
+  user: Generator.user(),
+  setUser: (info: UserModel) => {},
 });
 
 function UserProvider({ children }: PropsWithChildren) {
-  const [userInfo, setUserInfo] = useState<UserInfoModel>(Helper.generateUserInfo());
-
-  const updateUserInfo = (info: UserInfoModel): void => setUserInfo(info);
-
-  const contextValue: User = {
-    userInfo,
-    setUserInfo: updateUserInfo,
-  };
+  const [user, setUser] = useState(Generator.user());
+  const contextValue = { user, setUser };
 
   return <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>;
 }

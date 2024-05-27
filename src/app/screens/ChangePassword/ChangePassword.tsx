@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { ScrollView, View } from 'react-native';
 import { styles } from './ChangePassword.style';
-import { Ionicons, AntDesign } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import { InputBox } from '@components/InputBox/InputBox';
 import { Button } from '@components/Button/Button';
+
+const iconColor = '#A2A2A7';
+const iconSize = 24;
 
 function ChangePasswordScreen({ navigation }: any) {
   const [userData, setUserData] = useState({
@@ -11,10 +14,6 @@ function ChangePasswordScreen({ navigation }: any) {
     new: '',
     confirm: '',
   });
-
-  const [currentPasswordVisibility, setCurrentPasswordVisibility] = useState<boolean>(true);
-  const [newPasswordVisibility, setNewPasswordVisibility] = useState<boolean>(true);
-  const [confirmPasswordVisibility, setConfirmPasswordVisibility] = useState<boolean>(true);
 
   const updatePassword = async (): Promise<void> => {
     // Check also the current password
@@ -30,41 +29,28 @@ function ChangePasswordScreen({ navigation }: any) {
       <View style={styles.info_view}>
         <InputBox
           title="Current Password"
-          iconPosition="inline"
-          isPassword={currentPasswordVisibility}
+          icon={{ left: <Ionicons name="lock-closed-outline" size={iconSize} color={iconColor} /> }}
+          isPassword
+          visibilityIcon
+          visibilityIconColor={iconColor}
           getInputValue={(val) => setUserData({ ...userData, current: val })}
-        >
-          <Ionicons name="lock-closed-outline" size={24} color="#A2A2A7" />
-          <AntDesign
-            name="eyeo"
-            size={24}
-            color="#A2A2A7"
-            onPress={() => setCurrentPasswordVisibility((prev) => !prev)}
-          />
-        </InputBox>
+        />
         <InputBox
           title="New Password"
-          iconPosition="inline"
-          isPassword={newPasswordVisibility}
+          icon={{ left: <Ionicons name="lock-closed-outline" size={iconSize} color={iconColor} /> }}
+          isPassword
+          visibilityIcon
+          visibilityIconColor={iconColor}
           getInputValue={(val) => setUserData({ ...userData, new: val })}
-        >
-          <Ionicons name="lock-closed-outline" size={24} color="#A2A2A7" />
-          <AntDesign name="eyeo" size={24} color="#A2A2A7" onPress={() => setNewPasswordVisibility((prev) => !prev)} />
-        </InputBox>
+        />
         <InputBox
           title="Confirm New Password"
-          iconPosition="inline"
-          isPassword={confirmPasswordVisibility}
+          icon={{ left: <Ionicons name="lock-closed-outline" size={iconSize} color={iconColor} /> }}
+          isPassword
+          visibilityIcon
+          visibilityIconColor={iconColor}
           getInputValue={(val) => setUserData({ ...userData, confirm: val })}
-        >
-          <Ionicons name="lock-closed-outline" size={24} color="#A2A2A7" />
-          <AntDesign
-            name="eyeo"
-            size={24}
-            color="#A2A2A7"
-            onPress={() => setConfirmPasswordVisibility((prev) => !prev)}
-          />
-        </InputBox>
+        />
       </View>
       <Button
         title="Change"

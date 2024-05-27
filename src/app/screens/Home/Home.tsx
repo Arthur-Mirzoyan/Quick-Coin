@@ -5,7 +5,7 @@ import { UserCard } from '@components/UserCard/UserCard';
 import { Carousel } from '@components/Carousel/Carousel';
 import { CarouselItem } from './CarouselItem/CarouselItem';
 import { LinearGradient } from 'expo-linear-gradient';
-import { PrizeGrid } from '@screens/Home/PrizeGrid/PrizeGrid';
+import { GiftGrid } from './Gift.Grid/GiftGrid';
 
 function HomeScreen() {
   const carouselItems = [
@@ -30,7 +30,7 @@ function HomeScreen() {
         />,
       ],
     },
-    { title: 'PrizeGrid', data: [<PrizeGrid />] },
+    { title: 'PrizeGrid', data: [<GiftGrid />] },
   ];
 
   return (

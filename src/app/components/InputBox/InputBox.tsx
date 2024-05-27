@@ -1,54 +1,60 @@
-import React, { Children, PropsWithChildren } from 'react';
+import React, { ReactNode, useState } from 'react';
 import { View, Text, TextInput, StyleProp, TextStyle, ViewStyle } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { variables } from '@styles/base/variables';
 import { styles } from './InputBox.style';
 import { KeyboardEnum } from '@enums/Keyboard.enum';
 
 type InputBoxProps = {
+  title?: string;
   value?: string;
   defaultValue?: string;
   placeholder?: string;
-  title?: string;
-  iconPosition?: 'left' | 'right' | 'inline';
-  titleStyle?: StyleProp<TextStyle>;
-  inputStyle?: StyleProp<TextStyle>;
-  boxStyle?: StyleProp<ViewStyle>;
-  inputBoxStyle?: StyleProp<ViewStyle>;
   keyboard?: KeyboardEnum;
+  icon?: { left?: ReactNode; right?: ReactNode };
   isPassword?: boolean;
+  visibilityIcon?: boolean;
+  visibilityIconColor?: string;
   readonly?: boolean;
+  maxLength?: number;
+  style?: {
+    title?: StyleProp<TextStyle>;
+    input?: StyleProp<TextStyle>;
+    box?: StyleProp<ViewStyle>;
+    inputBox?: StyleProp<ViewStyle>;
+  };
   getInputValue?: (text: string) => unknown;
 };
 
-export function InputBox(props: PropsWithChildren<InputBoxProps>) {
-  const childrenArray = Children.toArray(props.children);
+export function InputBox(props: InputBoxProps) {
+  const [isSecure, setIsSecure] = useState(props.isPassword || false);
 
   return (
-    <View style={[styles.box, props.boxStyle]}>
-      <Text style={[styles.title, props.titleStyle]}>{props.title}</Text>
-      <View style={[styles.input_box, props.inputBoxStyle]}>
-        {props.iconPosition === 'left' && props.children}
-        {props.iconPosition === 'inline' && childrenArray[0]}
+    <View style={[styles.box, props.style?.box]}>
+      {props.title && <Text style={[styles.title, props.style?.title]}>{props.title}</Text>}
+      <View style={[styles.input_box, props.style?.inputBox]}>
+        {props.icon?.left}
         <TextInput
-          style={[styles.input, props.inputStyle]}
+          style={[styles.input, props.style?.input]}
           keyboardType={props.keyboard}
           defaultValue={props.defaultValue}
           value={props.value}
           onChangeText={(text) => props.getInputValue?.(text)}
-          secureTextEntry={props.isPassword}
+          secureTextEntry={isSecure}
           placeholder={props.placeholder}
           readOnly={props.readonly}
+          maxLength={props.maxLength}
         />
-        {props.iconPosition === 'right' && props.children}
-        {props.iconPosition === 'inline' && childrenArray[1]}
+        {props.visibilityIcon && (
+          <Ionicons
+            name={isSecure ? 'eye-off-sharp' : 'eye'}
+            size={24}
+            color={props.visibilityIconColor || variables.colors.primary}
+            onPress={() => setIsSecure((prev) => !prev)}
+          />
+        )}
+        {props.icon?.right}
       </View>
     </View>
   );
 }
-
-InputBox.propTypes = {
-  children: function (props: any, propName: any) {
-    if (React.Children.count(props[propName]) > 2) {
-      return new Error(`Should have at most 2 children.`);
-    }
-  },
-};
