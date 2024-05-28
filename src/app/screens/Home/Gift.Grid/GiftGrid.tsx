@@ -14,18 +14,22 @@ export function GiftGrid() {
     {
       icon: <FontAwesome5 name="chess-knight" size={iconSize} color={iconColor} />,
       title: 'Games',
+      category: 'games',
     },
     {
       icon: <Ionicons name="ticket-sharp" size={iconSize} color={iconColor} />,
       title: 'Tickets',
+      category: 'tickets',
     },
     {
       icon: <Entypo name="book" size={iconSize} color={iconColor} />,
       title: 'Books',
+      category: 'books',
     },
     {
       icon: <MaterialCommunityIcons name="ticket-percent" size={iconSize} color={iconColor} />,
       title: 'Coupon',
+      category: 'coupon',
     },
   ];
 

@@ -7,7 +7,7 @@ import { CarouselItem } from './CarouselItem/CarouselItem';
 import { LinearGradient } from 'expo-linear-gradient';
 import { GiftGrid } from './Gift.Grid/GiftGrid';
 
-function HomeScreen() {
+function HomeScreen({ navigation }: any) {
   const carouselItems = [
     require('@assets/img/onboarding1.png'),
     require('@assets/img/onboarding2.png'),

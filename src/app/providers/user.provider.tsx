@@ -8,12 +8,11 @@ const UserContext = createContext({
   setUser: (info: UserModel) => {},
 });
 
-function UserProvider({ children }: PropsWithChildren) {
+export default function UserProvider({ children }: PropsWithChildren) {
   const [user, setUser] = useState(Generator.user());
   const contextValue = { user, setUser };
 
   return <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>;
 }
 
-export default UserProvider;
 export const useUser = () => useContext(UserContext);
